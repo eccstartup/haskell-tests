@@ -9,9 +9,6 @@ build2 s n
   | length s <= n = (s ++ map (\x -> '0') [1..n - length s]) : []
   | otherwise = take n s : build2 (drop n s) n
 
---build transpose matrix
---build22 s = sort $ transpose s
-
 --build the cipher string
 build3 ss = filter (/='0') xs
   where xs = concat $ sort $ transpose ss
@@ -22,6 +19,15 @@ decode1 b s
   | b == ' ' = ' '
   | otherwise = ['A'..'Z'] !! n where
     n = fromJust $ elemIndex b (cps s)
+
+encode1 b s
+  | b == ' ' = ' '
+  | otherwise = (cps s) !! n where
+    n = fromJust $ elemIndex b ['A'..'Z']
+
+encodeMessage s m = map (\x -> encode1 x s) m
+
+decodeMessage s m = map (\x -> decode1 x s) m
 
 sayMe [] = do
   return ()
