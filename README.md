@@ -15,3 +15,10 @@ a test project for haskell
 
 `perfectpower.hs` is a problem [here](http://dailyhaskellexercise.tumblr.com/post/57947016925/test-if-a-integer-is-a-perfect-power).
 
+2013-08-16
+==========
+
+`cypher.hs` is a problem [here](https://www.hackerrank.com/contests/security/challenges/keyword-transposition-cipher).
+
+which should be named `cipher.hs`.
+
